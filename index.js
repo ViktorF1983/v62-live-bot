@@ -22,7 +22,7 @@ function render(data) {
 
 bot.command("live", async (ctx) => {
   try {
-    const url = `${SHEETS_API_URL}?token=${SHEETS_TOKEN}`;
+    const url = `${SHEETS_API_URL}?token=${encodeURIComponent(SHEETS_TOKEN)}`;
     const res = await fetch(url);
     const json = await res.json();
 
